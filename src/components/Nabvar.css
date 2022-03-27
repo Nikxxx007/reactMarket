@@ -1,0 +1,47 @@
+.navbar {
+    background: wheat;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-icon {
+    width: 40px;
+}
+
+.navbar-logo {
+    margin-right: auto;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background: aqua;
+    margin: 20px 40px;
+}
+
+.navbar-container li, .shop-icon{
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav-menu {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .menu-icon {
+        display: block;
+    }
+    
+}

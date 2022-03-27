@@ -15,11 +15,8 @@ function Navbar() {
             <div className='navbar'>
                  <div className='navbar-container'>
                      <Link to='/' className='navbar-logo'>
-                        <img className='navbar-icon' src={Logo} />
+                        <img className='navbar-icon' alt='logo' src={Logo} />
                      </Link>
-                     <div className="menu-icon" onClick={handleClick}>
-                         {click ? <FaTimes /> : <GiHamburgerMenu />}
-                     </div>
                      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                          <li className='nav-item'>
                              <Link to='/' className='nav-links'>
@@ -51,6 +48,9 @@ function Navbar() {
                          <button className='btn-shop'>
                              <FaShoppingCart />
                          </button>
+                     </div>
+                     <div className="menu-icon" onClick={handleClick}>
+                         {click ? <FaTimes /> : <GiHamburgerMenu />}
                      </div>
                  </div>
             </div>
