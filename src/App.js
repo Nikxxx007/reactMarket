@@ -5,13 +5,15 @@ import {
     Routes,
     Route
 } from "react-router-dom";
+import Home from './components/pages/HomePage/Home'
 
 const App = () => {
     return (
         <Router>
             <Navbar/>
             <Routes>
-                <Route path='/' exact />
+                <Route path='/' element={<Home />} />
+                <Route path='/'/>
                 <Route path='/'/>
                 <Route path='/'/>
                 <Route path='/'/>

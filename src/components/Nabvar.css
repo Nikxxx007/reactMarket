@@ -20,8 +20,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: aqua;
+    /*background: aqua;*/
     margin: 20px 40px;
+    z-index: 999;
 }
 
 .navbar-container li, .shop-icon{
@@ -31,10 +32,6 @@
     padding: 0 20px;
 }
 
-.nav-menu {
-    display: none;
-}
-
 .menu-icon {
     display: none;
 }
@@ -42,6 +39,38 @@
 @media screen and (max-width: 990px) {
     .menu-icon {
         display: block;
+    }
+
+    .nav-menu li{
+        /*display: block;*/
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .nav-menu {
+        /*list-style-type: none;*/
+        /*width: 100%;*/
+        width: 0;
+        text-align: center;
+        margin-top: 100px;
+
+        height: 100%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.9);
+        overflow-x: hidden;
+        transition: 0.5s;
+    }
+
+    .active {
+        width: 100%;
     }
     
 }
