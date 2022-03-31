@@ -1,11 +1,12 @@
 import React from 'react';
 import ContentSection from '../ContentSection';
-import { sectionOne } from './Data';
+import { sectionOne, sectionTwo } from './Data';
 
 function Home(props) {
     return (
         <>
-            <ContentSection />
+            <ContentSection {...sectionOne}/>
+            <ContentSection {...sectionTwo}/>
         </>
     );
 }
