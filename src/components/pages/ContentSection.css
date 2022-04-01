@@ -1,8 +1,21 @@
 .container {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: auto auto;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 100px 3% 140px;
+    display: grid;
+    height: 100%;
+    /*grid-template-columns: */
+    grid-template-columns: auto auto;
 }
 
+.half-section {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 990px) {
+    .container {
+        grid-template-columns: auto;
+    }
+}
