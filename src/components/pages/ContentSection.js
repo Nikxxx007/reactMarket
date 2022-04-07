@@ -1,6 +1,7 @@
 import React from 'react';
 import './ContentSection.css'
 import ReviewSection from '../ReviewSection'
+import Button from '../Button'
 
 function ContentSection({ headerText,
                         sectionText,
@@ -19,7 +20,7 @@ function ContentSection({ headerText,
                         <div className="text-section">
                             <h1>{headerText}</h1>
                             <p>{sectionText}</p>
-                            <button>{buttonText}</button>
+                            <Button name={buttonText}/>
                             <ReviewSection show={reviewSection}/>
                         </div>
                     </div>
