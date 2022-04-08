@@ -3,12 +3,18 @@ import { Link } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../assets/5e865e09d8efa341ab76b5e7_Logo.svg'
+import Button from './Button'
 import './Nabvar.css'
 
 function Navbar() {
     const [click, setClick] = useState(false);
     
     const handleClick = () => setClick(!click);
+
+    const buttonStyle = {
+        padding: '0 0',
+        height: '55px',
+        width:'55px'}
 
     return (
         <>
@@ -45,9 +51,7 @@ function Navbar() {
                          </li>
                      </ul>
                      <div className="shop-icon">
-                         <button className='btn-shop'>
-                             <FaShoppingCart />
-                         </button>
+                         <Button btnStyle={buttonStyle} name={<FaShoppingCart />} />
                      </div>
                      <div className="menu-icon" onClick={handleClick}>
                          {click ? <FaTimes /> : <GiHamburgerMenu />}

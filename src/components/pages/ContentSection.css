@@ -2,10 +2,14 @@
     max-width: 1200px;
     margin: 20px auto;
     padding: 100px 3% 140px;
-    display: grid;
+    display: flex;
     height: 100%;
     /*grid-template-columns: */
-    grid-template-columns: auto auto;
+    /*grid-template-columns: auto auto;*/
+}
+
+.reverse {
+    flex-direction: row-reverse;
 }
 
 .half-section {
@@ -15,22 +19,7 @@
 }
 
 @media screen and (max-width: 990px) {
-    .container {
-        grid-template-columns: auto;
-    }
-}
-
-.content-section {
-}
-
-.container {
-}
-
-.half-section {
-}
-
-.img-section {
-}
-
-.text-section {
+    /*.container {*/
+    /*    grid-template-columns: auto;*/
+    /*}*/
 }

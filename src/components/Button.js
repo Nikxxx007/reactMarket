@@ -4,7 +4,7 @@ import './Button.sass'
 function Button(props) {
     return (
         <>
-            <button className='btn'>{props.name}</button>
+            <button style={props.btnStyle} className='btn'>{props.name}</button>
         </>
     );
 }

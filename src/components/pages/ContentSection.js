@@ -10,7 +10,7 @@ function ContentSection({ headerText,
     return (
         <>
             <div className="content-section">
-                <div className="container">
+                <div className={imageIsLeft ? "container reverse" : "container"}>
                     <div className="half-section">
                        <div className="img-section">
                            <img src={imageSrc} alt={alt}/>
