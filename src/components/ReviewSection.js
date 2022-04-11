@@ -1,5 +1,6 @@
 import React from 'react';
 import ReviewLogo from '../assets/5e865e09d8efa3a3f976b5c3_trustpilot-logo.svg'
+import './ReviewSection.css'
 
 function ReviewSection(props) {
     if (!props.show)
