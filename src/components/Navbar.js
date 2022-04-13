@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useResolvedPath, useMatch } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../assets/5e865e09d8efa341ab76b5e7_Logo.svg'
 import Button from './Button'
 import './Nabvar.css'
+
+function IsActive(to) {
+    let resolved = useResolvedPath(to);
+    let match = useMatch({ path: resolved.pathname, end: true });
+
+    return match;
+}
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -15,7 +22,8 @@ function Navbar() {
         padding: '0 0',
         margin: '0 0',
         height: '55px',
-        width:'55px'}
+        width:'55px'
+    }
 
     return (
         <>
@@ -26,27 +34,27 @@ function Navbar() {
                      </Link>
                      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                          <li className='nav-item'>
-                             <Link to='/' className='nav-links'>
+                             <Link to='/' className={IsActive('/') ? 'nav-links active' : 'nav-links'}>
                                  Home
                              </Link>
                          </li>
                          <li className='nav-item'>
-                             <Link to='/Order' className='nav-links'>
+                             <Link to='/Order' className={IsActive('/Order') ? 'nav-links active' : 'nav-links'}>
                                  Order
                              </Link>
                          </li>
                          <li className='nav-item'>
-                             <Link to='/Company' className='nav-links'>
+                             <Link to='/Company' className={IsActive('/Company') ? 'nav-links active' : 'nav-links'}>
                                  Company
                              </Link>
                          </li>
                          <li className='nav-item'>
-                             <Link to='/FAQ' className='nav-links'>
+                             <Link to='/FAQ' className={IsActive('/FAQ') ? 'nav-links active' : 'nav-links'}>
                                  FAQ
                              </Link>
                          </li>
                          <li className='nav-item'>
-                             <Link to='/Contact' className='nav-links'>
+                             <Link to='/Contact' className={IsActive('/Contact') ? 'nav-links active' : 'nav-links'}>
                                  Contact
                              </Link>
                          </li>

@@ -1,5 +1,5 @@
 .navbar {
-    background: wheat;
+    background: white;
     height: 100px;
     display: flex;
     justify-content: center;
@@ -20,9 +20,23 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    /*background: aqua;*/
     margin: 20px 40px;
     z-index: 999;
+}
+
+.nav-links {
+    text-decoration: none;
+    transition: color 250ms ease;
+    color: #9c9f9d;
+}
+
+.active {
+    color: #35B8BE;
+}
+
+.nav-links:hover {
+    cursor: pointer;
+    color: #727373;
 }
 
 .navbar-container li, .shop-icon{
