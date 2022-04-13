@@ -6,6 +6,7 @@
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
+    gap: 40px;
     height: 100%;
 }
 
@@ -24,14 +25,14 @@
 }
 
 .text-section {
-    padding: 0 40px 0 0;
+    /*padding: 0 40px 0 0;*/
     letter-spacing: -0.03em;
 }
 
 .text-section h1 {
     font-size: 60px;
     line-height: 1;
-    margin: 60px 0 10px 0;
+    margin: 60px 0 20px 0;
 }
 
 .text-section p {
@@ -43,7 +44,20 @@
 }
 
 @media screen and (max-width: 990px) {
-    /*.container {*/
-    /*    grid-template-columns: auto;*/
-    /*}*/
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .reverse {
+       flex-direction: column-reverse;
+    }
+
+    .text-section {
+        padding: 0 0;
+    }
+
+    .half-section {
+        padding: 0 80px;
+    }
 }

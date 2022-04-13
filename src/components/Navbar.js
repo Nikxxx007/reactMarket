@@ -13,6 +13,7 @@ function Navbar() {
 
     const buttonStyle = {
         padding: '0 0',
+        margin: '0 0',
         height: '55px',
         width:'55px'}
 

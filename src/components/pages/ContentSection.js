@@ -5,11 +5,11 @@ import Button from '../Button'
 
 function ContentSection({ headerText,
                         sectionText,
-                        buttonText, reviewSection, imageSrc, alt, imageIsLeft}) {
+                        buttonText, reviewSection, imageSrc, alt, imageIsLeft, backStyle}) {
 
     return (
         <>
-            <div className="content-section">
+            <div style={backStyle} className="content-section">
                 <div className={imageIsLeft ? "container reverse" : "container"}>
                     <div className="half-section">
                        <div className="img-section">
