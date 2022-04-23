@@ -1,7 +1,7 @@
 import React from 'react';
-import ContentSection from '../ContentSection';
+import ContentSection from '../../components/ContentSection';
 import { sectionOne, sectionTwo } from './Data';
-import ShoppingMenu from '../ShoppingMenu'
+import ShoppingMenu from '../../components/ShoppingMenu'
 
 function Home(props) {
     return (

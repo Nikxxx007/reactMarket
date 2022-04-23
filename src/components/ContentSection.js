@@ -1,7 +1,7 @@
 import React from 'react';
 import './ContentSection.css'
-import ReviewSection from '../ReviewSection'
-import Button from '../Button'
+import ReviewSection from './ReviewSection'
+import Button from './Button'
 
 function ContentSection({ headerText,
                         sectionText,
