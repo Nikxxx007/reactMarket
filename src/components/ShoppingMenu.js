@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './ShoppingMenu.scss';
-// import Button from '../Button'
-import items from './MenuData'
+import items from './MenuData';
+import MenuItems from './MenuItems';
 
-const allCategories = new Set(items.map((item) => item.category));
-console.log(allCategories);
+const allCategories = [...new Set(items.map((item) => item.category))];
 
 function ShoppingMenu(props) {
 
+    const [value, setValue] = useState('Burgers');
 
+    const filterItems = (category) => {
+        console.log(category);
+        if (category === value)
+            return;
+        setValue(category);
+    }//TODO finishe this func and MenuItems
 
     return (
         <>
@@ -22,9 +28,21 @@ function ShoppingMenu(props) {
                         fresh food.</p>
                     </div>
                     <div className="menu-section">
-                        <button> Burgers</button>
-                        <button>Slides</button>
-                        <button>Drinks</button>
+                        {
+                            allCategories.map((item, index) => {
+                                console.log(item + ' ' + index);
+                                return(
+                                    <button
+                                        key={index}
+                                        onClick={() => filterItems(item)}
+                                        className={`category-btn ${item === value && 'active-btn'}`}
+                                    >
+                                        {item}
+                                    </button>
+                                );
+                            })
+                        }
+                       {/*<MenuItems items={items} />*/}
                     </div>
                 </div>
             </div>
