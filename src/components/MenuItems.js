@@ -1,6 +1,5 @@
 import React from 'react';
 import './MenuItems.scss';
-import menu from './MenuData';
 
 function MenuItems( {items} ) {
     return (

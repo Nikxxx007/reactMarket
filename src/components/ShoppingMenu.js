@@ -4,16 +4,21 @@ import items from './MenuData';
 import MenuItems from './MenuItems';
 
 const allCategories = [...new Set(items.map((item) => item.category))];
+const startItems = items.filter((item) => item.category === 'Burgers');
 
 function ShoppingMenu(props) {
 
     const [value, setValue] = useState('Burgers');
+    const [menuItems, setMenuItems] = useState(startItems);
 
     const filterItems = (category) => {
         console.log(category);
         if (category === value)
             return;
         setValue(category);
+
+        const newItems = items.filter((item) => item.category === category);
+        setMenuItems(newItems);
     }//TODO finishe this func and MenuItems
 
     return (
@@ -42,7 +47,7 @@ function ShoppingMenu(props) {
                                 );
                             })
                         }
-                       {/*<MenuItems items={items} />*/}
+                       <MenuItems items={menuItems} />
                     </div>
                 </div>
             </div>
