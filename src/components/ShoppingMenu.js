@@ -18,6 +18,7 @@ function ShoppingMenu(props) {
         setValue(category);
 
         const newItems = items.filter((item) => item.category === category);
+        console.log(newItems)
         setMenuItems(newItems);
     }//TODO finishe this func and MenuItems
 
@@ -40,7 +41,7 @@ function ShoppingMenu(props) {
                                     <button
                                         key={index}
                                         onClick={() => filterItems(item)}
-                                        className={`category-btn ${item === value && 'active-btn'}`}
+                                        className={item === value ? 'active-btn' : 'category-btn'}
                                     >
                                         {item}
                                     </button>
