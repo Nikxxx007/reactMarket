@@ -36,7 +36,6 @@ function ShoppingMenu(props) {
                     <div className="menu-section">
                         {
                             allCategories.map((item, index) => {
-                                console.log(item + ' ' + index);
                                 return(
                                     <button
                                         key={index}
@@ -48,8 +47,8 @@ function ShoppingMenu(props) {
                                 );
                             })
                         }
-                       <MenuItems items={menuItems} />
                     </div>
+                    <MenuItems items={menuItems} />
                 </div>
             </div>
         </>
