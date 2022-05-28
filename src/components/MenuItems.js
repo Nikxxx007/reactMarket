@@ -96,7 +96,8 @@ function MenuItems( {items} ) {
                                     <p>{description}</p>
                                     <CartDiv>
                                         <StyledInput type={'number'} defaultValue={1} min={1} max={10}/>
-                                        <CartButton onClick={}>Add To Cart</CartButton>
+                                        <CartButton>Add To Cart</CartButton>
+                                        {/*TODO add onClick here*/}
                                     </CartDiv>
                                 </Block>
                             </StyledItem>
