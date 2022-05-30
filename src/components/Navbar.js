@@ -5,6 +5,7 @@ import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import Logo from '../assets/5e865e09d8efa341ab76b5e7_Logo.svg'
 import Button from './Button'
 import './Nabvar.css'
+import CartMenu from './CartMenu'
 
 function IsActive(to) {
     let resolved = useResolvedPath(to);
@@ -22,6 +23,11 @@ function Navbar() {
     const handleClick = () => setClick(!click);
 
     const [amount, setAmount] = useState(0);
+
+    function handleProducts(count) {
+        amount += count;
+        setAmount(amount);
+    }
 
     const buttonStyle = {
         padding: '0 0',
@@ -75,6 +81,7 @@ function Navbar() {
                      </div>
                  </div>
             </div>
+            <CartMenu></CartMenu>
         </>
     );
 }

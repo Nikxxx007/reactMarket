@@ -86,7 +86,7 @@ function MenuItems( {items} ) {
                     items.map((items) => {
                         const {id, title, category, price, image, description} = items;
                         return (
-                            <StyledItem>
+                            <StyledItem key={id}>
                                 <StyledImage src={image}/>
                                 <Block>
                                     <Flex justifyContent={'space-between'} margin={'10px 0'} >

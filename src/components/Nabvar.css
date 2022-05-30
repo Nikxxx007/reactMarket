@@ -21,7 +21,7 @@
     justify-content: flex-end;
     align-items: center;
     margin: 20px 40px;
-    z-index: 999;
+    z-index: 1;
 }
 
 .nav-links {
