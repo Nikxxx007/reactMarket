@@ -54,7 +54,7 @@ const CartDiv = styled.div`
   bottom: 0;
 `
 
-const CartButton = styled.button`
+export const CartButton = styled.button`
   min-height: 45px;
   justify-content: center;
   border-radius: 6px;
