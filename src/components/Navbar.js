@@ -24,6 +24,12 @@ function Navbar() {
 
     const [amount, setAmount] = useState(0);
 
+    const [cart, setCart] = useState(false);
+
+    function handleCart(state) {
+        setCart(state);
+    }
+
     function handleProducts(count) {
         amount += count;
         setAmount(amount);
@@ -70,8 +76,8 @@ function Navbar() {
                              </Link>
                          </li>
                      </ul>
-                     <div className="shop-icon">
-                         <Button btnStyle={buttonStyle} name={<FaShoppingCart />} />
+                     <div className="shop-icon" onClick={() => setCart(true)}>
+                         <Button  btnStyle={buttonStyle} name={<FaShoppingCart />} />
                      </div>
                      <div className="shop-amount">
                          <p>{amount}</p>
@@ -81,7 +87,7 @@ function Navbar() {
                      </div>
                  </div>
             </div>
-            <CartMenu></CartMenu>
+            <CartMenu click={cart} callBack={handleCart}></CartMenu>
         </>
     );
 }

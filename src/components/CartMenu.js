@@ -4,9 +4,9 @@ import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { CartButton } from './MenuItems';
 
 const BackgroundShadow = styled.div`
-  //pacity: 0;
-  //transition: opacity 300ms ease 0s;
-  //display: none;
+  transition: opacity 300ms ease 0s;
+  ${props => !props.click && `opacity: 0; display: none;`}
+  
   
   width: 100vw;
   height: 100vh;
@@ -17,6 +17,10 @@ const BackgroundShadow = styled.div`
 `
 
 const MenuContainer = styled.div`
+  transition: opacity 300ms ease 0s;
+  ${props => !props.click && `opacity: 0; display: none;`}
+  
+  
   width: 480px;
   height: 100vh;
   background: white;
@@ -45,12 +49,11 @@ const CheckoutContainer = styled.div`
   bottom: 0;
   width: 480px;
   border-top: 1px solid #e6e6e6;
-  //display: flex;
+  
   justify-content: space-between;
  
   padding: 16px 24px;
   
-  bottom: 0;
   
   .subtotal {
     color: #7e828f;
@@ -75,32 +78,37 @@ const Flex = styled.div`
 const ProductsContainer = styled.div`
   height: 100%;
   position: relative;
-  padding-bottom: 12px 24px;
+  padding: 12px 24px 192px 24px;
   overflow: auto;
+`
+
+const CloseIcon = styled(FaTimes)`
+  cursor: pointer;
+  height: 25px;
 `
 
 function CartMenu(props) {
     let total = 0;
     return (
         <>
-            <BackgroundShadow>
+            <BackgroundShadow click={props.click}>
             </BackgroundShadow>
-            <MenuContainer>
+            <MenuContainer click={props.click}>
                 <MenuTitle>
                     <h4>Your Order</h4>
-                    <FaTimes size={25}/>
+                    <CloseIcon onClick={() => props.callBack(false)}/>
                 </MenuTitle>
                 <ProductsContainer>
-                {/*TODO add auto products adding and add style for this div*/}
+                    {/*TODO add auto products adding and add style for this div*/}
                 </ProductsContainer>
                 <CheckoutContainer>
                     <Flex>
                         <span className={'subtotal'}>Subtotal</span>
                         <span className={'total'}>$ {total} USD</span>
                     </Flex>
-                    <CheckoutButton onClick={() => alert('This function currenty unavailable')}>Continue to Checkout</CheckoutButton>
+                    <CheckoutButton onClick={() => alert('This function currenty unavailable')}>Continue to
+                        Checkout</CheckoutButton>
                 </CheckoutContainer>
-
             </MenuContainer>
         </>
     );
