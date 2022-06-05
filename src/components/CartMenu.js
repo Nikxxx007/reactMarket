@@ -91,7 +91,8 @@ function CartMenu(props) {
     let total = 0;
     return (
         <>
-            <BackgroundShadow click={props.click}>
+            {/*TODO add smooth component appearance*/}
+            <BackgroundShadow click={props.click} onClick={() => props.callBack(false)}>
             </BackgroundShadow>
             <MenuContainer click={props.click}>
                 <MenuTitle>

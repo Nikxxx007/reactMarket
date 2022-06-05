@@ -19,18 +19,14 @@ function Navbar() {
     const closeMobileMenu = () => {
       setClick(false);
     }
+
+    const [cart, setCart] = useState(false);
     
     const handleClick = () => setClick(!click);
 
     const [amount, setAmount] = useState(0);
 
-    const [cart, setCart] = useState(false);
-
-    function handleCart(state) {
-        setCart(state);
-    }
-
-    function handleProducts(count) {
+    function addProducts(count) { //add amount
         amount += count;
         setAmount(amount);
     }
@@ -87,7 +83,7 @@ function Navbar() {
                      </div>
                  </div>
             </div>
-            <CartMenu click={cart} callBack={handleCart}></CartMenu>
+            <CartMenu click={cart} callBack={setCart}></CartMenu>
         </>
     );
 }
