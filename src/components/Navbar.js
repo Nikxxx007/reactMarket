@@ -67,9 +67,9 @@ function Navbar() {
                              </Link>
                          </li>
                          <li className='nav-item' onClick={closeMobileMenu}>
-                             <Link to='/Contact' className={IsActive('/Contact') ? 'nav-links active' : 'nav-links'}>
+                             <a href="mailto:info@website.com?subject=Hi" className={'nav-links'}>
                                  Contact
-                             </Link>
+                             </a>
                          </li>
                      </ul>
                      <div className="shop-icon" onClick={() => setCart(true)}>
