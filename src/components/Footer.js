@@ -20,11 +20,14 @@ const FooterWrapper = styled.div`
 
 const FooterContainer = styled.div`
   max-width: 1200px;
+  width: 100%;
   display: flex;
-  padding: 40px 5%;
+  justify-content: space-between;
+  margin: 40px 5%;
   
   .footer__left-column {
     margin-right: 10px;
+    width: 100%;
   }
 `
 
