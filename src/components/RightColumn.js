@@ -7,15 +7,16 @@ const Flex = styled.div`
   width: 100%;
   justify-content: flex-end;
   
-  &div:nth-child(1) {
-    margin-right: 10px;
+  &:first-child {
+    margin-right: 20px;
   }
 `
 
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  & {
+  margin-left: 80px;
+  & * {
     margin-bottom: 15px;
     text-decoration: none;
     color: #546285;
