@@ -7,8 +7,9 @@ const Flex = styled.div`
   width: 100%;
   justify-content: flex-end;
   
-  &:first-child {
-    margin-right: 20px;
+  @media screen and (max-width: 990px) {
+    width: auto;
+    justify-content: start;
   }
 `
 
@@ -20,6 +21,10 @@ const Column = styled.div`
     margin-bottom: 15px;
     text-decoration: none;
     color: #546285;
+  }
+  @media screen and (max-width: 990px) {
+    margin-left: 0;
+    margin-right: 40px;
   }
 `
 

@@ -10,7 +10,7 @@ const FooterWrapper = styled.div`
 
   display: flex;
   justify-content: center;
- 
+
   background-color: #f5fbfc;
   background-image: url("./images/5e865e09d8efa326ac76b5fe_Pattern Footer.svg");
   background-repeat: no-repeat;
@@ -29,12 +29,12 @@ const FooterContainer = styled.div`
     margin-right: 10px;
     width: 100%;
   }
-`
 
-const LeftColumn = styled.div`
-    
+  @media screen and (max-width: 990px) {
+    flex-direction: column;
+    width: auto;
+  }
 `
-
 
 function Footer(props) {
     return (
