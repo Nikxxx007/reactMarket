@@ -2,12 +2,12 @@ const defaultState = {
     products: [],
 }
 
-export const productReducer = (state = { value: 0 }, action) => {
+export const productReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case 'INCREMENT':
-            return { value: state.value + 1 }
-        case 'DECREMENT':
-            return { value: state.value - 1 }
+        case 'ADD_PRODUCT':
+            return { value: state.value + action.payload }
+        case 'REMOVE_PRODUCT':
+            return { value: state.value - action.payload }
         default:
             return state
     }

@@ -7,6 +7,8 @@ import Button from './Button'
 import './Nabvar.css'
 import CartMenu from './CartMenu'
 
+import {useSelector} from 'react-redux';
+
 function IsActive(to) {
     let resolved = useResolvedPath(to);
     let match = useMatch({ path: resolved.pathname, end: true });
@@ -19,17 +21,12 @@ function Navbar() {
     const closeMobileMenu = () => {
       setClick(false);
     }
+    const amount = useSelector(state => state.amount.value)
 
     const [cart, setCart] = useState(false);
-    
+
     const handleClick = () => setClick(!click);
 
-    const [amount, setAmount] = useState(0);
-
-    function addProducts(count) { //add amount
-        amount += count;
-        setAmount(amount);
-    }
 
     const buttonStyle = {
         padding: '0 0',

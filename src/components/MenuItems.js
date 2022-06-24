@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components';
+import {useDispatch, useSelector} from "react-redux"
 
 const ItemsArea = styled.div`
   display: grid;
@@ -79,11 +80,18 @@ const StyledInput = styled.input`
 `
 
 function MenuItems( {items} ) {
+    const itemsRef = useRef([]);
+    const dispatch = useDispatch();
+    const addToCart = (id) => {
+        dispatch({type:"INCREMENT", payload: +itemsRef.current[id].value});
+        //TODO add product (if product already exist change only value)
+    }
+
     return (
         <>
             <ItemsArea>
                 {
-                    items.map((items) => {
+                    items.map((items, i) => {
                         const {id, title, category, price, image, description} = items;
                         return (
                             <StyledItem key={id}>
@@ -95,9 +103,12 @@ function MenuItems( {items} ) {
                                     </Flex>
                                     <p>{description}</p>
                                     <CartDiv>
-                                        <StyledInput type={'number'} defaultValue={1} min={1} max={10}/>
-                                        <CartButton>Add To Cart</CartButton>
-                                        {/*TODO add onClick here*/}
+                                        <StyledInput
+                                            ref={el => itemsRef.current[id] = el}
+                                            type={'number'}
+                                            defaultValue={1}
+                                            min={1} max={10}/>
+                                        <CartButton onClick={() => addToCart(id)}>Add To Cart</CartButton>
                                     </CartDiv>
                                 </Block>
                             </StyledItem>
