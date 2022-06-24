@@ -1,13 +1,17 @@
+import menu from '../components/MenuData';
+
 const defaultState = {
-    products: [],
+    products: new Array(menu.length).fill(0),
 }
 
-export const productReducer = (state = defaultState, action) => {
-    switch (action.type) {
+export const productReducer = (state = defaultState, {type, payload}) => {
+    switch (type) {
         case 'ADD_PRODUCT':
-            return { value: state.value + action.payload }
+            return Object.assign({}, state, {
+                product: state.products[payload.id - 1] += parseInt(payload.value)
+            })
         case 'REMOVE_PRODUCT':
-            return { value: state.value - action.payload }
+            return {...state,  products: state.products - payload.value }
         default:
             return state
     }
