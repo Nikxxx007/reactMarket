@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import {useSelector} from 'react-redux';
 import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { CartButton } from './MenuItems';
+import CartItems from './CartItems';
+import items from './MenuData';
 
 const BackgroundShadow = styled.div`
   transition: opacity 300ms ease 0s;
@@ -88,7 +91,13 @@ const CloseIcon = styled(FaTimes)`
 `
 
 function CartMenu(props) {
+    const selectedProducts = useSelector(state => state.products.products);
+
     let total = 0;
+    for (let i = 0; i < items.length; i++) {
+        total += +items[0].price * selectedProducts[i];
+    }
+
     return (
         <>
             {/*TODO add smooth component appearance*/}
@@ -100,7 +109,7 @@ function CartMenu(props) {
                     <CloseIcon onClick={() => props.callBack(false)}/>
                 </MenuTitle>
                 <ProductsContainer>
-                    {/*TODO add auto products adding and add style for this div*/}
+                    <CartItems />
                 </ProductsContainer>
                 <CheckoutContainer>
                     <Flex>

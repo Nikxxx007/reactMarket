@@ -42,7 +42,7 @@ const Block = styled.div`
   position: relative;
 `
 
-const ItemHeader = styled.h6`
+export const ItemHeader = styled.h6`
   color: 08090a;
   font-size: 20px;
   line-height: 1;
@@ -65,11 +65,10 @@ export const CartButton = styled.button`
   color: white;
 `
 
-const StyledInput = styled.input`
+export const StyledInput = styled.input`
   type: number;
   defaultValue: 1;
   min: 1;
-  max: 10;
   padding: 8px 6px 8px 12px;
   margin-right: 8px;
   line-height: 20px;
