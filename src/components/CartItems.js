@@ -50,7 +50,8 @@ function CartItems(props) {
                                     <p>$ {price} USD</p>
                                     remove
                                 </div>
-                                <ItemInput value={selectedProducts[id - 1]} onChange={(e) => console.log(e.current.value())}/>
+                                <ItemInput value={selectedProducts[id - 1]} onBlur={(e) => console.log('k3k')}/>
+                            {/*    TODO onBlur finish*/}
                             </InfoContainer>
                         </CartItem>
                     );

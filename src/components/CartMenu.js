@@ -95,7 +95,7 @@ function CartMenu(props) {
 
     let total = 0;
     for (let i = 0; i < items.length; i++) {
-        total += +items[0].price * selectedProducts[i];
+        total += +items[i].price * selectedProducts[i];
     }
 
     return (
@@ -114,7 +114,7 @@ function CartMenu(props) {
                 <CheckoutContainer>
                     <Flex>
                         <span className={'subtotal'}>Subtotal</span>
-                        <span className={'total'}>$ {total} USD</span>
+                        <span className={'total'}>$ {total.toFixed(2)} USD</span>
                     </Flex>
                     <CheckoutButton onClick={() => alert('This function currenty unavailable')}>Continue to
                         Checkout</CheckoutButton>
