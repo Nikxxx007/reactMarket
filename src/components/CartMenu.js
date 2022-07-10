@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import { FaTimes, FaShoppingCart } from 'react-icons/fa';
 import { CartButton } from './MenuItems';
 import CartItems from './CartItems';
@@ -90,8 +90,10 @@ const CloseIcon = styled(FaTimes)`
   height: 25px;
 `
 
-function CartMenu(props) {
+function CartMenu() {
+    const dispatch = useDispatch();
     const selectedProducts = useSelector(state => state.products.products);
+    const cartStatus = useSelector(state => state.cart.value);
 
     let total = 0;
     for (let i = 0; i < items.length; i++) {
@@ -100,13 +102,12 @@ function CartMenu(props) {
 
     return (
         <>
-            {/*TODO add smooth component appearance*/}
-            <BackgroundShadow click={props.click} onClick={() => props.callBack(false)}>
+            <BackgroundShadow click={cartStatus} onClick={() => dispatch({type:"CLOSE"})}>
             </BackgroundShadow>
-            <MenuContainer click={props.click}>
+            <MenuContainer click={cartStatus}>
                 <MenuTitle>
                     <h4>Your Order</h4>
-                    <CloseIcon onClick={() => props.callBack(false)}/>
+                    <CloseIcon onClick={() => dispatch({type:"CLOSE"})}/>
                 </MenuTitle>
                 <ProductsContainer>
                     <CartItems />

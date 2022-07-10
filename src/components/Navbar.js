@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useResolvedPath, useMatch } from 'react-router-dom';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { FaTimes, FaShoppingCart } from 'react-icons/fa';
+import {useDispatch} from 'react-redux';
 import Logo from '../assets/5e865e09d8efa341ab76b5e7_Logo.svg'
 import Button from './Button'
 import './Nabvar.css'
@@ -17,13 +18,13 @@ function IsActive(to) {
 }
 
 function Navbar() {
+    const dispatch = useDispatch();
+
     const [click, setClick] = useState(false);
     const closeMobileMenu = () => {
       setClick(false);
     }
     const amount = useSelector(state => state.amount.value)
-
-    const [cart, setCart] = useState(false);
 
     const handleClick = () => setClick(!click);
 
@@ -69,7 +70,7 @@ function Navbar() {
                              </a>
                          </li>
                      </ul>
-                     <div className="shop-icon" onClick={() => setCart(true)}>
+                     <div className="shop-icon" onClick={() => dispatch({type:"OPEN"})}>
                          <Button  btnStyle={buttonStyle} name={<FaShoppingCart />} />
                      </div>
                      <div className="shop-amount">
@@ -80,7 +81,7 @@ function Navbar() {
                      </div>
                  </div>
             </div>
-            <CartMenu click={cart} callBack={setCart}></CartMenu>
+            <CartMenu/>
         </>
     );
 }

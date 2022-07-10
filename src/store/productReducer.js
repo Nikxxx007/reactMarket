@@ -11,7 +11,9 @@ export const productReducer = (state = defaultState, {type, payload}) => {
                 product: state.products[payload.id - 1] += parseInt(payload.value)
             })
         case 'REMOVE_PRODUCT':
-            return {...state,  products: state.products - payload.value }
+            return Object.assign({}, state, {
+                product: state.products[payload.id - 1] = 0
+            })
         default:
             return state
     }

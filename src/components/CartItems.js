@@ -28,11 +28,21 @@ const InfoContainer = styled.div`
   justify-content: space-between;
 `
 
+const RemoveText = styled.div`
+  color: orange;
+  cursor: pointer;
+`
+
 function CartItems(props) {
     const dispatch = useDispatch();
 
     const selectedProducts = useSelector(state => state.products.products);
     console.log(items);
+
+    const removeFromCart = (id) => {
+        dispatch({type:"DECREMENT", payload: selectedProducts[id - 1]});
+        dispatch({type:"REMOVE_PRODUCT", payload: {id: id}})
+    }
 
     return (
         <>
@@ -48,10 +58,9 @@ function CartItems(props) {
                                 <div>
                                     <ItemTitle>{title}</ItemTitle>
                                     <p>$ {price} USD</p>
-                                    remove
+                                    <RemoveText onClick={() => removeFromCart(id)}>Remove</RemoveText>
                                 </div>
-                                <ItemInput value={selectedProducts[id - 1]} onBlur={(e) => console.log('k3k')}/>
-                            {/*    TODO onBlur finish*/}
+                                x {selectedProducts[id - 1]}
                             </InfoContainer>
                         </CartItem>
                     );

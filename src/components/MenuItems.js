@@ -84,7 +84,7 @@ function MenuItems( {items} ) {
     const addToCart = (id) => {
         dispatch({type:"INCREMENT", payload: +itemsRef.current[id].value});
         dispatch({type:"ADD_PRODUCT", payload: {id: id, value: itemsRef.current[id].value}})
-        //TODO add product (if product already exist change only value)
+        dispatch({type:"OPEN"});
     }
 
     return (
